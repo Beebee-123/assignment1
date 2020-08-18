@@ -1,0 +1,91 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Currency converter</title>
+        <style>
+            body {
+                background-color: aliceblue;
+                text-align: center;
+
+
+            }
+            h1 {
+                color: darkslateblue;
+                font-family: 'Courier New', Courier, monospace;
+                
+            }
+           
+        
+        </style>
+    </head>
+    <body>
+     <h1>Currency Converter</h1>
+     
+     
+     <label>From:</label>
+     <input type="text" placeholder="0.00" id="from" oninput="convertThis()">
+     <select id="s1">
+         <option value="naira" selected>Naira(₦)</option>
+         <option value="dollars">Dollars($)</option>
+         <option value="pounds">Pounds(£)</option>
+         </select> <br><br>
+         <label>To:</label>
+         <input type="text" placeholder="0.00" id="to">
+     <select id="s2">
+         <option value="naira1">Naira(₦)</option>
+         <option value="dollar1" selected>Dollars($)</option>
+         <option value="pounds1">Pounds(£)</option>
+     </select ><br><br>
+     
+     <!--<input type="button" value="Covert" id="btn" onclick="convertThis()"> -->
+   
+     
+    </body>
+    <script type="text/javascript">
+    function convertThis(){
+        let a=document.getElementById("from").value;
+        let s1=document.getElementById("s1");
+        let s2=document.getElementById("s2");
+        
+      
+        if(s1.value=="naira" && s2.value=="dollar1"){
+            let c=a*0.0026;
+        document.getElementById("to").value="$"+c;
+
+        }
+        else if(s1.value=="dollars" && s2.value=="naira1"){
+            let d=a*383.49;
+            document.getElementById("to").value="=N="+d;
+            
+        }
+        else if(s1.value=="pounds" && s2.value=="naira1"){
+            let e=a*505.92;
+            document.getElementById("to").value="₦"+e;
+
+        }
+        else if(s1.value=="naira" && s2.value=="pounds1"){
+            let f=a*0.0020;
+            document.getElementById("to").value="£"+f;
+
+        }
+        else if(s1.value=="dollars" && s2.value=="pounds1"){
+            let g=a*0.76;
+            document.getElementById("to").value="£"+g;
+
+        }
+        else if(s1.value=="pounds" && s2.value=="dollar1"){
+            let h=a*1.32;
+            document.getElementById("to").value="$"+h;
+
+        }
+        else {
+            alert("Please input value");
+        }
+            
+        
+
+
+
+    }
+    </script>
+</html>
